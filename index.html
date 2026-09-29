@@ -6,9 +6,28 @@
 <title>Olympus Gaming — Great games. Better company.</title>
 <meta name="description" content="From the battlefield to the stars. Join Olympus Gaming, an international community playing Arma 3, Star Citizen, DCS, Wardogs, and more.">
 <meta name="theme-color" content="#0b0d0e"><link rel="icon" href="favicon.ico">
+<script>
+// Decide before first paint; the homepage stays available if JavaScript fails.
+try {
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('olympus-intro-seen') && !location.hash) {
+    document.documentElement.dataset.intro = 'playing';
+    setTimeout(function () { delete document.documentElement.dataset.intro; }, 2400);
+  }
+} catch (_) { /* Unavailable session storage: show the homepage immediately. */ }
+</script>
+<link rel="preload" as="image" href="images/intro-logo.png">
+<script src="assets/js/intro.js" defer></script>
 <link rel="preload" as="image" href="images/hero-tacops.jpg"><link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
+<div class="intro" aria-hidden="true">
+  <div class="intro-brand">
+    <img src="images/intro-logo.png" alt="" width="5000" height="1605" fetchpriority="high">
+    <div class="intro-line"></div>
+    <p class="intro-caption">Preparing for deployment</p>
+  </div>
+  <p class="intro-skip">Click or press any key to skip</p>
+</div>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header wrap">
 <a class="wordmark" href="index.html" aria-label="Olympus Gaming home"><img src="images/logo-large.png" alt="Olympus Gaming" width="5000" height="2001"></a>

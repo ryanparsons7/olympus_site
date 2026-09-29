@@ -555,3 +555,82 @@ h2{
     gap:6px
   }
 }
+
+/* Brief, optional first-visit entrance. Hidden by default for no-JS visits. */
+.intro {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #050708;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+html[data-intro="playing"] { overflow: hidden; }
+html[data-intro] .intro { display: flex; }
+.intro-brand { width: min(540px, 76vw); }
+.intro-brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: intro-logo-in 650ms ease-out both;
+}
+.intro-line {
+  width: 150px;
+  height: 1px;
+  margin: 36px auto 22px;
+  background: #d5b57425;
+  overflow: hidden;
+}
+.intro-line::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  transform-origin: left;
+  animation: intro-sweep 1s ease-in-out both;
+}
+.intro-caption, .intro-skip {
+  color: var(--gold);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.intro-caption { animation: intro-logo-in 650ms 150ms both; }
+.intro-skip {
+  position: absolute;
+  bottom: max(28px, env(safe-area-inset-bottom));
+  padding-inline: 16px;
+  color: #a5a7a8;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+html[data-intro="revealing"] .intro {
+  pointer-events: none;
+  animation: intro-out 400ms ease-in both;
+}
+html[data-intro="revealing"] .hero-content {
+  animation: homepage-in 600ms ease-out both;
+}
+@keyframes intro-logo-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes intro-sweep {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes intro-out {
+  to { opacity: 0; visibility: hidden; }
+}
+@keyframes homepage-in {
+  from { opacity: .3; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-intro] .intro { display: none; }
+  html[data-intro="playing"] { overflow: auto; }
+  .intro *, html[data-intro="revealing"] .hero-content { animation: none; }
+}
