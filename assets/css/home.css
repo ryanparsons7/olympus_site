@@ -132,7 +132,8 @@ nav>a>span:not(.discord-icon){
   position:absolute;
   inset:0;
   z-index:-2;
-  background:url("../../images/banner-bg.jpg") center 45% / cover no-repeat;
+  /* Official artwork: https://arma3.com/assets/img/bg/tacops.jpg */
+  background:url("../../images/hero-tacops.jpg") center 45% / cover no-repeat;
   filter:sepia(.48) saturate(.8) brightness(.82)
 }
 .hero::after{
@@ -266,9 +267,6 @@ h2{
   transition:transform .5s;
   filter:saturate(.75)
 }
-.game-card:hover img{
-  transform:scale(1.045)
-}
 .game-label{
   position:absolute;
   inset:auto 24px 20px;
@@ -286,17 +284,6 @@ h2{
   letter-spacing:2.5px;
   text-transform:uppercase;
   margin:10px 0 0
-}
-.circle-arrow{
-  width:44px;
-  height:44px;
-  display:grid;
-  place-items:center;
-  border:1px solid var(--gold);
-  border-radius:50%;
-  color:var(--gold);
-  font-size:26px;
-  flex-shrink:0
 }
 .division-grid{
   margin-top:34px;
