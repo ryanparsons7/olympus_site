@@ -1,3 +1,6 @@
+/*! Font Awesome Free 5.9.0 by @fontawesome - https://fontawesome.com
+ * Brand font: SIL OFL 1.1 - https://fontawesome.com/license/free
+ */
 @font-face{
   font-family:"Discord brand";
   src:url("../webfonts/fa-brands-400.woff2") format("woff2");
@@ -78,12 +81,6 @@ nav{
   align-items:center;
   gap:38px;
   font-size:14px
-}
-nav>a:not(.button):hover{
-  color:var(--gold)
-}
-nav>a>span:not(.discord-icon){
-  margin-left:8px
 }
 .button{
   display:inline-flex;
@@ -188,21 +185,6 @@ h1{
   align-items:center;
   gap:32px
 }
-.text-link{
-  display:inline-flex;
-  gap:25px;
-  align-items:center;
-  border-bottom:1px solid var(--gold);
-  padding:8px 0;
-  color:#d9d5ca;
-  font-size:15px
-}
-.text-link span{
-  color:var(--gold)
-}
-.text-link:hover{
-  color:var(--gold)
-}
 .scene-caption{
   display:flex;
   align-items:center;
@@ -241,7 +223,7 @@ h2{
   color:var(--muted);
   margin:0
 }
-.game-grid,.division-grid{
+.game-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:24px
@@ -284,26 +266,6 @@ h2{
   letter-spacing:2.5px;
   text-transform:uppercase;
   margin:10px 0 0
-}
-.division-grid{
-  margin-top:34px;
-  gap:64px
-}
-.division-grid article{
-  scroll-margin-top:32px
-}
-.division-grid h3{
-  font-size:28px
-}
-.division-grid p:not(.eyebrow){
-  color:var(--muted);
-  font-size:15px;
-  max-width:580px
-}
-.division-grid .eyebrow{
-  font-size:9px;
-  letter-spacing:2px;
-  margin-bottom:14px
 }
 .community{
   border-block:1px solid var(--line);
@@ -389,9 +351,6 @@ h2{
   .game-label p{
     letter-spacing:1.5px
   }
-  .division-grid{
-    gap:32px
-  }
 }
 @media(max-width:760px){
   .wrap{
@@ -467,7 +426,7 @@ h2{
     max-width:none;
     margin-top:20px
   }
-  .game-grid,.division-grid,.community-layout{
+  .game-grid,.community-layout{
     grid-template-columns:1fr;
     gap:24px
   }
@@ -484,11 +443,7 @@ h2{
   .section{
     padding-block:36px
   }
-  .division-grid{
-    margin-top:30px;
-    gap:32px
-  }
-  .community{
+.community{
     padding-block:45px
   }
   .join{
