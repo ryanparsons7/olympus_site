@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473 209">
+  <!-- Outline follows the original 473 x 209 artwork, with curved helmet edges. -->
+  <path fill="white" d="M207.2 34 C207.2 29.7 208.3 24 210.5 18.7 C212.5 13.7 215.2 9.3 218.8 6.1 C220.8 4.4 223.1 2.8 225.5 2.6 C229.1 2.3 232.7 3.1 236.1 4.2 C241.4 5.2 245.9 7.6 249.6 11.1 L255.5 17.2 Q257.1 19 257.3 22.2 L257.7 26 Q259.6 29.4 259.7 34 Z"/>
+  <path fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round" d="M330.4 34 L325.7 29.1 L321 25 L316.4 20.6 L312.4 16.8 Q310.5 15 310.8 12.7 Q311 11.1 313 9.3 L315 7.5 Q316.2 6.8 317.7 7.4 L321.2 8.7 L326.3 13 L333.1 18.8 L339.2 24.3 L343.7 28.2 Q345.2 29.7 345.4 31.6 L345.4 34 Z"/>
+  <path fill="white" d="M0 32.1 H473 V209 H0 Z"/>
+</svg>

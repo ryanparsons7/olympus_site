@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <!-- Only the two vertical tail fins extend above the card's 135px edge. -->
+  <path fill="white" d="M415 136 L413 97 L409 62 L402 53 L400 44 L399 40 L407 39 L416 44 L422 49 L422 61 L426 83 L431 107 L436 128 L438 136 Z"/>
+  <path fill="white" d="M800 136 L797 116 L795 106 L790 100 L788 94 L789 90 L796 91 L805 95 L810 101 L811 112 L816 136 Z"/>
+  <path fill="white" d="M0 135 H1200 V668.333 H0 Z"/>
+</svg>

@@ -25,7 +25,7 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:"Segoe UI",Arial,sans-serif;
+  font-family:"Orbitron","Segoe UI",sans-serif;
   font-size:16px;
   line-height:1.65
 }
@@ -69,7 +69,7 @@ a:focus-visible{
   gap:32px
 }
 .wordmark{
-  font-family:"Arial Black","Segoe UI",sans-serif;
+  font-family:"Orbitron","Segoe UI",sans-serif;
   font-weight:900;
   font-size:27px;
   letter-spacing:-1px;
@@ -92,7 +92,7 @@ nav{
   border:1px solid transparent;
   border-radius:2px;
   font-weight:600;
-  transition:background .2s,transform .2s
+  transition:background-color .2s,filter .2s,transform .2s
 }
 .button:hover{
   transform:translateY(-2px)
@@ -100,17 +100,17 @@ nav{
 .button-outline{
   border-color:var(--gold);
   color:var(--gold);
-  background:#0b0d0e66
+  background-color:#0b0d0e66
 }
 .button-outline:hover{
-  background:#d5b5741a
+  background-color:#d5b5741a
 }
 .button-gold{
   background:linear-gradient(120deg,#dec184,#b49454);
   color:#101211
 }
 .button-gold:hover{
-  background:#e5c98f
+  filter:brightness(1.1)
 }
 .discord-icon{
   font-family:"Discord brand";
@@ -162,7 +162,7 @@ nav{
   background:var(--gold)
 }
 h1,h2,h3{
-  font-family:Impact,"Arial Narrow","Franklin Gothic Medium",sans-serif;
+  font-family:"Orbitron","Segoe UI",sans-serif;
   font-weight:400;
   line-height:1.08;
   margin:0;
@@ -174,7 +174,7 @@ h1{
 }
 .hero-description{
   font-size:22px;
-  font-weight:300;
+  font-weight:400;
   line-height:1.5;
   color:#d0d0ca;
   margin:20px 0 28px
@@ -225,7 +225,10 @@ h2{
 .game-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:24px
+  gap:64px 24px
+}
+.games .section-heading{
+  margin-bottom:64px
 }
 .game-card{
   position:relative;
@@ -236,16 +239,81 @@ h2{
   background:#191d1e
 }
 .game-card::after{
+  content:"";
   position:absolute;
   inset:0;
-  content:"";
-  background:linear-gradient(0deg,#050808 0%,#05080866 40%,transparent 85%)
+  background:linear-gradient(0deg,#050808 0%,#050808e6 16%,#05080866 45%,transparent 75%);
+  z-index:3;
+  pointer-events:none
 }
 .game-card img{
   width:100%;
   height:100%;
   object-fit:cover;
   filter:saturate(.75)
+}
+/* A shaped top edge lets the original helmet and weapon cross the card frame. */
+.game-card--popout{
+  overflow:visible;
+  clip-path:inset(-100% 0 0 0);
+  border:0;
+  background:transparent;
+  isolation:isolate
+}
+.game-card--popout::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border:1px solid #766446;
+  z-index:1;
+  pointer-events:none
+}
+.game-card--popout img{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:auto;
+  min-width:100%;
+  height:117.647059%;
+  min-height:0;
+  mask:url("../../images/star-citizen-card-mask.svg") center / 100% 100% no-repeat;
+  transform:translate(-50%,-15%);
+  filter:saturate(.75);
+  z-index:2
+}
+.game-card--popout .game-label{
+  z-index:4
+}
+.game-card--wardogs img{
+  top:0;
+  left:0;
+  width:100%;
+  height:auto;
+  bottom:auto;
+  min-height:0;
+  mask-image:url("../../images/wardogs-card-mask.svg");
+  transform:translateY(-13.333333%)
+}
+.game-card--arma{
+  background:#050808
+}
+.game-card--arma img{
+  top:0;
+  bottom:auto;
+  min-height:0;
+  height:135.135135%;
+  mask-image:url("../../images/arma-card-mask.svg");
+  transform:translate(-50%,-26%)
+}
+.game-card--dcs img{
+  top:0;
+  left:0;
+  width:100%;
+  height:auto;
+  bottom:auto;
+  min-height:0;
+  mask-image:url("../../images/dcs-card-mask.svg");
+  transform:translateY(-20%)
 }
 .game-label{
   position:absolute;
@@ -254,7 +322,7 @@ h2{
   align-items:center;
   justify-content:space-between;
   gap:12px;
-  z-index:1
+  z-index:4
 }
 .game-label h3{
   font-size:32px
@@ -428,8 +496,14 @@ h2{
     grid-template-columns:1fr;
     gap:24px
   }
+  .game-grid{
+    row-gap:64px
+  }
   .game-card{
     aspect-ratio:1.8
+  }
+  .game-card--popout{
+    aspect-ratio:2.25
   }
   .game-label p{
     letter-spacing:1.7px
@@ -464,30 +538,19 @@ h2{
   }
 }
 .site-header .wordmark{
-  position:relative;
+  font-family:"Orbitron","Segoe UI",sans-serif;
   display:block;
-  width:330px;
-  height:28px;
   flex-shrink:0;
-  overflow:hidden
-}
-.site-header .wordmark img{
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:auto
+  font-size:32px
 }
 @media(max-width:1100px){
   .site-header .wordmark{
-    width:260px;
-    height:23px
+    font-size:26px
   }
 }
 @media(max-width:760px){
   .site-header .wordmark{
-    width:250px;
-    height:22px
+    font-size:25px
   }
 }
 @media(max-width:360px){
