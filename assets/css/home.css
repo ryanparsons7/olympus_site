@@ -129,16 +129,15 @@ nav{
   position:absolute;
   inset:0;
   z-index:-2;
-  /* Official artwork: https://arma3.com/assets/img/bg/tacops.jpg */
-  background:url("../../images/hero-tacops.jpg") center 45% / cover no-repeat;
-  filter:sepia(.48) saturate(.8) brightness(.82)
+  /* WARDOGS Steam artwork: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1867240/9e3d0dba457f3d33734990866160be80c399f67c/library_hero_2x.jpg */
+  background:url("../../images/hero-battlefield-hd.jpg") center center / cover no-repeat
 }
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
   z-index:-1;
-  background:linear-gradient(90deg,rgba(6,9,11,.96) 0%,rgba(6,9,11,.77) 28%,rgba(6,9,11,.23) 67%,rgba(6,9,11,.1)),linear-gradient(0deg,#0b0d0e 0%,transparent 22%,transparent 77%,#0b0d0e7a)
+  background:linear-gradient(90deg,rgba(6,9,11,.85) 0%,rgba(6,9,11,.65) 28%,rgba(6,9,11,.15) 67%,rgba(6,9,11,.06)),linear-gradient(0deg,#0b0d0e 0%,transparent 22%,transparent 77%,#0b0d0e7a)
 }
 .hero-content{
   padding-top:150px;
@@ -246,7 +245,6 @@ h2{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform .5s;
   filter:saturate(.75)
 }
 .game-label{
@@ -433,11 +431,7 @@ h2{
   .game-card{
     aspect-ratio:1.8
   }
-  .game-label h3{
-    font-size:32px
-  }
   .game-label p{
-    font-size:8px;
     letter-spacing:1.7px
   }
   .section{
